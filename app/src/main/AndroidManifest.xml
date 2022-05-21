@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.caboca.sendit">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_sendit_flecha"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_sendit_flecha_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity
+            android:name=".MensajesPrivado"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".OpcionesGrupo"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:noHistory="true" />
+        <activity
+            android:name=".MensajesGrupo"
+            android:screenOrientation="portrait"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Privados"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Grupos"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".Amigos"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".InterfazPrincipal"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroUsuario"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ConexionPSQL"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+    </application>
+
+</manifest>

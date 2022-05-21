@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_agregar_amigo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_agregar_participantes_grupo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_amigos.xml" value="0.264" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_eliminar_amigo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_eliminar_participantes_grupo.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_grupos.xml" value="0.264" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_interfaz_principal.xml" value="0.264" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_mensajes_grupo.xml" value="0.2" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_mensajes_privado.xml" value="0.264" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_opciones_grupo.xml" value="0.264" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_privados.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_registro_usuario.xml" value="0.264" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/amigo_layout.xml" value="0.6" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/card_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/card_layout_participantes.xml" value="0.4021317829457364" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/content_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/content_mensajes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/mensajes_layout.xml" value="0.4" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/persona_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/mipmap-anydpi-v26/ic_launcher_Sendit.xml" value="0.208" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
