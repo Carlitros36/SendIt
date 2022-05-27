@@ -15,12 +15,23 @@ import com.caboca.sendit.databinding.ActivityMensajesGrupoBinding;
 public class MensajesGrupo extends AppCompatActivity {
 
     private RecyclerView.LayoutManager layoutManager;
-    private RecyclerView.Adapter adapter;
-    ActivityMensajesGrupoBinding binding;
+    private static RecyclerView.Adapter adapter;
+    static ActivityMensajesGrupoBinding binding;
     public static String nombreGrupo;
-    Controlador c = InterfazPrincipal.c;
-    final Handler handler= new Handler();
-    private final int TIEMPO = 1000;
+    static Controlador c = InterfazPrincipal.c;
+    static final Handler handler= new Handler();
+    static Runnable myRunnable = new Runnable() {
+        public void run() {
+
+            c.mostrarMensajesGrupo(nombreGrupo);
+            adapter = new RecyclerAdapterMensajesGrupo();
+            binding.contenidoMensajes.recyclerView.setAdapter(adapter);
+            int position = RecyclerAdapterMensajesGrupo.mensajes.size()-1;
+            binding.contenidoMensajes.recyclerView.scrollToPosition(position);
+            handler.postDelayed(this, TIEMPO);
+        }
+    };
+    private final static int TIEMPO = 1000;
 
 
     @Override
@@ -38,8 +49,6 @@ public class MensajesGrupo extends AppCompatActivity {
         binding.btnGrupoActual.setText(nombreGrupo);
         int position = RecyclerAdapterMensajesGrupo.mensajes.size()-1;
         binding.contenidoMensajes.recyclerView.scrollToPosition(position);
-
-        c.mostrarMensajesGrupo(nombreGrupo);
 
         binding.btnEnviarMensaje.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,19 +76,14 @@ public class MensajesGrupo extends AppCompatActivity {
                 startActivity(opcionesGrupo);
             }
         });
-        handler.postDelayed(new Runnable() {
-            public void run() {
+        handler.postDelayed(myRunnable, TIEMPO);
+    }
 
-                // función a ejecutar
-                c.mostrarMensajesGrupo(nombreGrupo);
-                adapter = new RecyclerAdapterMensajesGrupo();
-                binding.contenidoMensajes.recyclerView.setAdapter(adapter);
-                int position = RecyclerAdapterMensajesGrupo.mensajes.size()-1;
-                binding.contenidoMensajes.recyclerView.scrollToPosition(position);
-                //binding.editTextEnviarMensaje.setText("");
-                handler.postDelayed(this, TIEMPO);
-            }
-
-        }, TIEMPO);
+    @Override
+    public void onBackPressed() {
+        handler.removeCallbacks(myRunnable);
+        Intent grupos = new Intent(MensajesGrupo.this, Grupos.class);
+        grupos.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(grupos);
     }
 }

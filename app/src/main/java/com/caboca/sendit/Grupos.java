@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.service.controls.Control;
 import android.view.View;
@@ -35,19 +36,18 @@ public class Grupos extends AppCompatActivity {
         binding.btnCrearGrupo.setVisibility(View.INVISIBLE);
 
 
-
         binding.btnOpcionesCrearGrupo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(binding.btnOpcionesCrearGrupo.getText().equals("MOSTRAR OPCIONES CREAR GRUPO")){
+                if (binding.btnOpcionesCrearGrupo.getText().equals("MOSTRAR OPCIONES CREAR GRUPO")) {
                     binding.btnOpcionesCrearGrupo.setText("OCULTAR OPCIONES CREAR GRUPO");
-                }else{
+                } else {
                     binding.btnOpcionesCrearGrupo.setText("MOSTRAR OPCIONES CREAR GRUPO");
                 }
-                if (binding.editTextNuevoGrupo.getVisibility()==View.VISIBLE){
+                if (binding.editTextNuevoGrupo.getVisibility() == View.VISIBLE) {
                     binding.editTextNuevoGrupo.setVisibility(View.INVISIBLE);
                     binding.btnCrearGrupo.setVisibility(View.INVISIBLE);
-                }else {
+                } else {
                     binding.editTextNuevoGrupo.setVisibility(View.VISIBLE);
                     binding.btnCrearGrupo.setVisibility(View.VISIBLE);
                 }
@@ -59,9 +59,9 @@ public class Grupos extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String nuevoGrupo = binding.editTextNuevoGrupo.getText().toString().trim();
-                if (nuevoGrupo.isEmpty()){
+                if (nuevoGrupo.isEmpty()) {
                     Toast.makeText(Grupos.this, "Debe introducir un nombre para el nuevo grupo", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     c.crearGrupo(nuevoGrupo, getApplicationContext());
                     c.mostrarGrupos();
                     adapter = new RecyclerAdapterGrupos();
@@ -73,7 +73,10 @@ public class Grupos extends AppCompatActivity {
             }
         });
     }
-    @Override public void onBackPressed() {
+
+    @Override
+    public void onBackPressed() {
         finish();
     }
+
 }

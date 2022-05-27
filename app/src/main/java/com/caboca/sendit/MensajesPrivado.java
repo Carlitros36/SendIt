@@ -23,6 +23,20 @@ public class MensajesPrivado extends AppCompatActivity {
     public static int id_chat;
     Controlador c = InterfazPrincipal.c;
     final Handler handler= new Handler();
+    Runnable myRunnable = new Runnable() {
+        public void run() {
+
+            // función a ejecutar
+            c.mostrarMensajesPrivado(id_chat);
+            adapter = new RecyclerAdapterMensajesPrivado();
+            binding.contenidoMensajes.recyclerView.setAdapter(adapter);
+            int position = RecyclerAdapterMensajesPrivado.mensajes.size()-1;
+            binding.contenidoMensajes.recyclerView.scrollToPosition(position);
+            //binding.editTextEnviarMensaje.setText("");
+            handler.postDelayed(this, TIEMPO);
+        }
+
+    };
     private final int TIEMPO = 1000;
 
     @Override
@@ -65,12 +79,14 @@ public class MensajesPrivado extends AppCompatActivity {
                 AlertDialog.Builder dialogo1 = new AlertDialog.Builder(MensajesPrivado.this);
                 dialogo1.setTitle("CUIDADO");
                 String usuario = binding.textViewNombrePrivado.getText().toString();
-                dialogo1.setMessage("¿Seguro que desea eliminar el chat privado con "+ usuario +" permanentemente?");
+                dialogo1.setMessage("Está a punto de eliminar el chat privado tanto para "+usuario+" como para usted." +
+                        "\n¿Seguro que desea continuar?");
                 dialogo1.setCancelable(false);
                 dialogo1.setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogo1, int id) {
                         c.eliminarChatPrivado(id_chat);
                         c.mostrarPrivados();
+                        handler.removeCallbacks(myRunnable);
                         Intent privados = new Intent(MensajesPrivado.this, Privados.class);
                         privados.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(privados);
@@ -84,19 +100,12 @@ public class MensajesPrivado extends AppCompatActivity {
                 dialogo1.show();
             }
         });
-        handler.postDelayed(new Runnable() {
-            public void run() {
-
-                // función a ejecutar
-                c.mostrarMensajesPrivado(id_chat);
-                adapter = new RecyclerAdapterMensajesPrivado();
-                binding.contenidoMensajes.recyclerView.setAdapter(adapter);
-                int position = RecyclerAdapterMensajesPrivado.mensajes.size()-1;
-                binding.contenidoMensajes.recyclerView.scrollToPosition(position);
-                //binding.editTextEnviarMensaje.setText("");
-                handler.postDelayed(this, TIEMPO);
-            }
-
-        }, TIEMPO);
+        handler.postDelayed(myRunnable, TIEMPO);
+    }
+    @Override public void onBackPressed() {
+        handler.removeCallbacks(myRunnable);
+        Intent privados = new Intent(MensajesPrivado.this, Privados.class);
+        privados.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(privados);
     }
 }

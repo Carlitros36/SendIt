@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    tools:context=".LoginActivity" >
+    tools:context=".LoginActivity">
 
     <Button
         android:id="@+id/btnIniciarSesion"
@@ -38,7 +38,6 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:text="INICIO DE SESIÓN"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -118,5 +117,18 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextPasswd"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="SENDIT"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

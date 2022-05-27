@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -45,7 +46,7 @@ public class Privados extends AppCompatActivity {
                     if (binding.spinnerElegirNuevoPrivado.getVisibility() == View.INVISIBLE) {
                         binding.spinnerElegirNuevoPrivado.setVisibility(View.VISIBLE);
                         binding.btnCrear.setVisibility(View.VISIBLE);
-                        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(getApplicationContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, elegirAmigoNuevoPrivado);
+                        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner_personalizado, elegirAmigoNuevoPrivado);
                         binding.spinnerElegirNuevoPrivado.setAdapter(spinnerAdapter);
                     } else {
                         binding.spinnerElegirNuevoPrivado.setVisibility(View.INVISIBLE);
@@ -64,14 +65,14 @@ public class Privados extends AppCompatActivity {
             }
         });
     }
-    @Override public void onBackPressed() {
-        finish();
-    }
     public static void recargarLista() {
         c.mostrarAmigos();
         adapter = new RecyclerAdapterPrivados();
         binding.contenidoPrivados.recyclerView.setAdapter(adapter);
         binding.spinnerElegirNuevoPrivado.setVisibility(View.INVISIBLE);
         binding.btnCrear.setVisibility(View.INVISIBLE);
+    }
+    @Override public void onBackPressed() {
+        finish();
     }
 }

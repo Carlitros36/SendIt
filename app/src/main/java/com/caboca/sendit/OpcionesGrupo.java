@@ -73,7 +73,7 @@ public class OpcionesGrupo extends AppCompatActivity {
                     if (binding.spinnerElegirNuevoParticipante.getVisibility()==View.INVISIBLE){
                         binding.spinnerElegirNuevoParticipante.setVisibility(View.VISIBLE);
                         binding.btnAgregarParticipante.setVisibility(View.VISIBLE);
-                        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(getApplicationContext(), androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, elegirNuevoParticiante);
+                        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.spinner_personalizado, elegirNuevoParticiante);
                         binding.spinnerElegirNuevoParticipante.setAdapter(spinnerAdapter);
                     }
                 }
@@ -99,6 +99,7 @@ public class OpcionesGrupo extends AppCompatActivity {
                     public void onClick(DialogInterface dialogo1, int id) {
                         c.eliminarGrupo(nombreGrupo);
                         c.mostrarGrupos();
+                        MensajesGrupo.handler.removeCallbacks(MensajesGrupo.myRunnable);
                         Intent grupos = new Intent(OpcionesGrupo.this, Grupos.class);
                         grupos.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(grupos);
@@ -123,6 +124,7 @@ public class OpcionesGrupo extends AppCompatActivity {
                     public void onClick(DialogInterface dialogo1, int id) {
                         c.eliminarParticipanteGrupo(nombreGrupo, c.usuarioLogeado);
                         c.mostrarGrupos();
+                        MensajesGrupo.handler.removeCallbacks(MensajesGrupo.myRunnable);
                         Intent grupos = new Intent(OpcionesGrupo.this, Grupos.class);
                         grupos.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(grupos);
@@ -137,21 +139,6 @@ public class OpcionesGrupo extends AppCompatActivity {
                 dialogo1.show();
             }
         });
-
-        /*binding.btnEliminarParticipante.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                c.elegirParticipanteEliminar(nombreGrupo);
-                if (RecyclerAdapterAgregarParticipantesGrupo.noParticipantes.isEmpty()){
-                    Toast.makeText(OpcionesGrupo.this, "SOLO TÚ PERTENECES AL GRUPO", Toast.LENGTH_SHORT).show();
-                }else {
-                    Intent eliminarParticipante = new Intent(OpcionesGrupo.this, AgregarParticipantesGrupo.class);
-                    startActivity(eliminarParticipante);
-                }
-
-            }
-        });*/
     }
 
     public static void recargarParticipantes(){
@@ -161,4 +148,10 @@ public class OpcionesGrupo extends AppCompatActivity {
         binding.spinnerElegirNuevoParticipante.setVisibility(View.INVISIBLE);
         binding.btnAgregarParticipante.setVisibility(View.INVISIBLE);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent mensajesGrupo = new Intent(OpcionesGrupo.this, MensajesGrupo.class);
+        mensajesGrupo.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(mensajesGrupo);    }
 }

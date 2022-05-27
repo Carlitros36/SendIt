@@ -10,7 +10,7 @@
         <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_eliminar_participantes_grupo.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_grupos.xml" value="0.264" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_interfaz_principal.xml" value="0.264" />
-        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_mensajes_grupo.xml" value="0.2" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/activity_mensajes_privado.xml" value="0.264" />
@@ -23,7 +23,8 @@
         <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/content_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/content_mensajes.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/mensajes_layout.xml" value="0.4" />
-        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/persona_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/persona_layout.xml" value="0.6" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/layout/spinner_personalizado.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/SendIt/app/src/main/res/mipmap-anydpi-v26/ic_launcher_Sendit.xml" value="0.208" />
       </map>
     </option>

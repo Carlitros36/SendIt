@@ -58,10 +58,25 @@ public class InterfazPrincipal extends AppCompatActivity {
         binding.btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent login = new Intent(InterfazPrincipal.this, LoginActivity.class);
-                login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(login);
-                ConexionPSQL.desconectar();
+                AlertDialog.Builder dialogo1 = new AlertDialog.Builder(InterfazPrincipal.this);
+                dialogo1.setTitle("ATENCIÓN");
+                dialogo1.setMessage("¿Seguro que desea cerrar sesión?");
+                dialogo1.setCancelable(false);
+                dialogo1.setPositiveButton("Cerrar Sesión", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogo1, int id) {
+                        ConexionPSQL.desconectar();
+                        Intent login = new Intent(InterfazPrincipal.this, LoginActivity.class);
+                        login.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        //finishAffinity();
+                        startActivity(login);
+                    }
+                });
+                dialogo1.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialogo1, int id) {
+                        dialogo1.cancel();
+                    }
+                });
+                dialogo1.show();
             }
         });
         binding.btnEliminarCuenta.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +107,7 @@ public class InterfazPrincipal extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        moveTaskToBack(true);
     }
 
 }

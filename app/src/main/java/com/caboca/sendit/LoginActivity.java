@@ -39,8 +39,8 @@ public class LoginActivity extends AppCompatActivity {
                     if (c.comprobarLogin(user, passEncript) == true) {
                         Toast.makeText(LoginActivity.this, "Login correcto", Toast.LENGTH_SHORT).show();
                         Intent interfazPrincipal = new Intent(LoginActivity.this, InterfazPrincipal.class);
+                        interfazPrincipal.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(interfazPrincipal);
-                        //finish();
                     } else {
                         Toast.makeText(LoginActivity.this, "Login incorrecto", Toast.LENGTH_SHORT).show();
                     }

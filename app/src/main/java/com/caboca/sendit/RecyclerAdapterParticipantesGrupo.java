@@ -40,6 +40,7 @@ public class RecyclerAdapterParticipantesGrupo extends RecyclerView.Adapter<Recy
         String admin = c.buscarNombreAdmin(OpcionesGrupo.nombreGrupo);
         if(participante.equals(admin)){
             viewHolder.btnEliminarParticipante.setVisibility(View.INVISIBLE);
+            viewHolder.itemAdmin.setVisibility(View.VISIBLE);
         }
     }
 
@@ -52,12 +53,14 @@ public class RecyclerAdapterParticipantesGrupo extends RecyclerView.Adapter<Recy
 
         TextView itemTitle;
         TextView itemDetail;
+        TextView itemAdmin;
         Button btnEliminarParticipante;
 
         ViewHolder(View itemView) {
             super(itemView);
             itemTitle = itemView.findViewById(R.id.itemTitle);
             itemDetail = itemView.findViewById(R.id.itemDetail);
+            itemAdmin = itemView.findViewById(R.id.textViewAdmin);
             btnEliminarParticipante = itemView.findViewById(R.id.btnBorrar);
             String admin = c.buscarNombreAdmin(OpcionesGrupo.nombreGrupo);
             if (!admin.equals(c.usuarioLogeado)) {

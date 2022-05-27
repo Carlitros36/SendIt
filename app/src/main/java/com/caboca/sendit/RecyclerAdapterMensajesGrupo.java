@@ -41,6 +41,7 @@ public class RecyclerAdapterMensajesGrupo extends RecyclerView.Adapter<RecyclerA
             viewHolder.itemTitle.setGravity(Gravity.RIGHT);
             viewHolder.itemDetail.setGravity(Gravity.RIGHT);
         }else{
+            viewHolder.itemTitle.setText(usuario);
             viewHolder.itemTitle.setGravity(Gravity.LEFT);
             viewHolder.itemDetail.setGravity(Gravity.LEFT);
         }
